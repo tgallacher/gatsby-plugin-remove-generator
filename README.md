@@ -1,43 +1,42 @@
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square&logo=Github)](http://makeapullrequest.com)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/tgallacher/gatsby-plugin-remove-generator/graphs/commit-activity)
+![NPM version](https://img.shields.io/npm/v/gatsby-plugin-remove-generator.svg?style=flat)
+![Minified size](https://img.shields.io/bundlephobia/min/gatsby-plugin-remove-generator.svg?style=flat)
+![NPM license](https://img.shields.io/npm/l/gatsby-plugin-remove-generator.svg?style=flat)
+[![Build Status](https://travis-ci.com/tgallacher/gatsby-plugin-remove-generator.svg?branch=master)](https://travis-ci.com/tgallacher/gatsby-plugin-remove-generator)
+
 ## Description
 
-Include a summary of what this plugin accomplishes. Is there a demo site that shows how this plugin operates? If so, include a link to the deployed demo site and/or its src code here.
+Gatsby plugin to remove the "generator" `<meta>` tag from your Gatsby site.
 
-### Dependencies (optional)
+### Background
 
-Are there any plugins that must be installed in order to make this plugin work, please include a list of those plugins and links to their pages here.
+Gatsby auto injects a `<meta>` tag in the `<head>` of your site that indicates the Gatsby version used to build your site, for example.
 
-### Learning Resources (optional)
+```html
+<meta name="generator" content="Gatsby 2.13.2" />
+```
 
-If there are other tutorials, docs, and learning resources that are necessary or helpful to someone using this plugin, please link to those here.
+This is too much detail in the built assets, for my taste.
 
-## How to install
+## Install
 
-Please include installation instructions here.
+To add to your Gatsby setup, simply install
 
-## Available options (if any)
+```sh
+yarn add gatsby-plugin-remove-generator
+```
 
-## When do I use this plugin?
+and add to your config file:
 
-Include stories about when this plugin is helpful and/or necessary.
+> Note: The generator is only injected during a production build and so this plugin will only affect a production build.
 
-## Examples of usage
-
-This usually shows a code example showing how to include this plugin in a site's `config.js` file.
-
-    code example
-
-//See this [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code) on how to format code examples.
-
-This section could also include before-and-after examples of data when the plugin is enabled, if applicable.
-
-## How to query for data (source plugins only)
-
-If this is a source plugin README, source plugins ought to allow people to query for data within their Gatsby site. Please include code examples to show how to query for data using your source plugin.
-
-## How to run tests
-
-## How to develop locally
-
-## How to contribute
-
-If you have unanswered questions, would like help with enhancing or debugging the plugin, it is nice to include instructions for people who want to contribute to your plugin.
+```js
+// gatsby-config.js
+module.exports = {
+  ...
+  plugins: [
+    'gatsby-plugin-remove-generator',
+  ]
+};
+```

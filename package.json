@@ -8,6 +8,10 @@
     "test": "jest",
     "lint": "eslint \".\""
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tgallacher/gatsby-plugin-remove-generator.git"
+  },
   "peerDependencies": {
     "gatsby": "2.x.x"
   },

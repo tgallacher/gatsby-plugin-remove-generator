@@ -1,12 +1,13 @@
 {
   "name": "gatsby-plugin-remove-generator",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "author": "Tom Gallacher <tgallacher@users.noreply.github.com>",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "lint": "eslint \".\""
+    "lint": "eslint \".\"",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",

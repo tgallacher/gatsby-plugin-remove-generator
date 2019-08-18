@@ -1,4 +1,4 @@
-const { onPreRenderHTML } = require('./gatsby-ssr');
+const { onPreRenderHTML } = require('../src/gatsby-ssr');
 
 it('keeps all non <meta> components', () => {
   let result;

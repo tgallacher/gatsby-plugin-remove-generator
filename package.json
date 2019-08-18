@@ -1,12 +1,18 @@
 {
   "name": "gatsby-plugin-remove-generator",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "author": "Tom Gallacher <tgallacher@users.noreply.github.com>",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "lint": "eslint \".\""
+    "lint": "eslint \".\"",
+    "prepack": "cp src/*.js .",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tgallacher/gatsby-plugin-remove-generator.git"
   },
   "peerDependencies": {
     "gatsby": "2.x.x"
@@ -21,7 +27,8 @@
     "husky": "^3.0.4",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.2",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "semantic-release": "^15.13.21"
   },
   "engines": {
     "node": ">=10.0.0"

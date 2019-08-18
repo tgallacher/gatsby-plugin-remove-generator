@@ -20,6 +20,8 @@ This is too much detail, for my taste, and also has potential security implicati
 
 ## Install
 
+> Note: The generator tag is only injected during a production build, and so this plugin will have an effect on the production output.
+
 To add to your Gatsby setup, simply install
 
 ```sh
@@ -27,8 +29,6 @@ yarn add gatsby-plugin-remove-generator
 ```
 
 and add to your config file:
-
-> Note: The generator is only injected during a production build and so this plugin will only affect a production build.
 
 ```js
 // gatsby-config.js

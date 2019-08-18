@@ -1,0 +1,8 @@
+# Exclude the following from our package
+node_modules/
+__tests__/
+
+*.yml
+*.js
+!gatsby-*.js
+!index.js

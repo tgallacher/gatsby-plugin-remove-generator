@@ -1,6 +1,8 @@
 sudo: false
 language: node_js
-node_js: '10'
+node_js:
+  - lts/*
+  - 12
 
 cache: yarn
 
@@ -9,10 +11,24 @@ notifications:
 
 install: yarn install --frozen-lockfile --non-interactive
 
-script:
-  - yarn lint
-  - yarn test
+stages:
+  - test
+  - name: release
+    if: branch = master
 
-branches:
-  only:
-    - master
+jobs:
+  include:
+    - stage: test
+      script:
+        - yarn lint
+        - yarn test
+    - stage: release
+      node_js: lts/*
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - yarn semantic-release
+      on:
+        branch: master

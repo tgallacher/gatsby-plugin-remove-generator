@@ -39,3 +39,23 @@ module.exports = {
   ]
 };
 ```
+
+## Options
+
+Pass supported options to the plugin to modify its default behaviour.
+
+```js
+// gatsby-config.js
+module.exports = {
+  ...
+  plugins: [
+    {
+      resolve: 'gatsby-plugin-remove-generator',
+      options: {
+        // Only remove the Gatsby version number
+        // instead of the whole node
+        removeVersionOnly: true,
+      },
+  ]
+};
+```

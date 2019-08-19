@@ -6,7 +6,7 @@
 
 ## Description
 
-Gatsby plugin to remove the "generator" `<meta>` tag from your Gatsby site.
+Customise or remove the `<meta name="generator">` tag on your Gatsby site.
 
 ### Background
 

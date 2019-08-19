@@ -52,9 +52,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-remove-generator',
       options: {
-        // Only remove the Gatsby version number
-        // instead of the whole node
+        // Only remove the Gatsby version number instead of the whole node
         removeVersionOnly: true,
+        // Customise the generator string altogether.
+        // Note: This has the highest precedence of the available options.
+        content: 'Custom string'
       },
   ]
 };

@@ -8,18 +8,20 @@ const isGeneratorTag = (type, name) => type === 'meta' && name === 'generator';
  */
 exports.onPreRenderHTML = (
   { getHeadComponents, replaceHeadComponents },
-  { removeVersionOnly } = {},
+  { removeVersionOnly = false, content } = {},
 ) => {
+  // TODO: something strange going on when inlining this below. Leave here for now
+  const keepTag = removeVersionOnly || content != undefined;
   const headComponents = getHeadComponents()
     .map(c =>
       isGeneratorTag(c.type, c.props.name)
         ? Object.assign({}, c, {
-            props: Object.assign({}, c.props, { content: 'Gatsby' }),
+            props: Object.assign({}, c.props, { content: content || 'Gatsby' }),
           })
         : c,
     )
     .filter(({ type, props: { name, content } }) =>
-      Boolean(removeVersionOnly) ? true : !isGeneratorTag(type, name),
+      keepTag ? true : !isGeneratorTag(type, name),
     );
 
   replaceHeadComponents(headComponents);

@@ -14,6 +14,10 @@
     "type": "git",
     "url": "https://github.com/tgallacher/gatsby-plugin-remove-generator.git"
   },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
   "peerDependencies": {
     "gatsby": "2.x.x"
   },

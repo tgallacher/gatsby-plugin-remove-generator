@@ -20,7 +20,7 @@ Gatsby auto injects a `<meta>` tag in the `<head>` of your site that indicates t
 <meta name="generator" content="Gatsby 2.13.2" />
 ```
 
-This is too much detail (for my liking) and also has potential security implications.
+This is too much detail for my personal preference, and also has potential security implications.
 
 ## Install
 

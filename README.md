@@ -2,13 +2,17 @@
 
 Customise or remove the "_generator_" meta tag on your Gatsby site.
 
+---
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square&logo=Github)](http://makeapullrequest.com)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/tgallacher/gatsby-plugin-remove-generator/graphs/commit-activity)
 ![NPM version](https://img.shields.io/npm/v/gatsby-plugin-remove-generator.svg?style=flat)
 ![NPM license](https://img.shields.io/npm/l/gatsby-plugin-remove-generator.svg?style=flat)
 [![Build Status](https://travis-ci.com/tgallacher/gatsby-plugin-remove-generator.svg?branch=master)](https://travis-ci.com/tgallacher/gatsby-plugin-remove-generator)
 
-### Background
+---
+
+## Background
 
 Gatsby auto injects a `<meta>` tag in the `<head>` of your site that indicates the Gatsby version used to build your site, for example.
 

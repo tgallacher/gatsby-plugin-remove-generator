@@ -1,6 +1,6 @@
-Customise or remove the `<meta name="generator">` tag on your Gatsby site.
+# gatsby-plugin-remove-generator
 
----
+Customise or remove the "_generator_" meta tag on your Gatsby site.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square&logo=Github)](http://makeapullrequest.com)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/tgallacher/gatsby-plugin-remove-generator/graphs/commit-activity)

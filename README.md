@@ -14,19 +14,19 @@ Customise or remove the "_generator_" meta tag on your Gatsby site.
 
 ## Background
 
-Gatsby auto injects a `<meta>` tag in the `<head>` of your site that indicates the Gatsby version used to build your site, for example.
+Gatsby auto injects a `<meta>` tag in the `<head>` of your site that indicates the Gatsby version used to build your site; For example:
 
 ```html
 <meta name="generator" content="Gatsby 2.13.2" />
 ```
 
-This is too much detail, for my liking, and also has potential security implications.
+This is too much detail (for my liking) and also has potential security implications.
 
 ## Install
 
-> Note: The generator tag is only injected during a production build, and so this plugin will have an effect on the production output.
+> Note: The generator tag is only injected during a production build, and so this plugin will only have an effect on the production output.
 
-To add to your Gatsby setup, simply install
+To add this plugin to your Gatsby setup, simply install using yarn/npm
 
 ```sh
 yarn add gatsby-plugin-remove-generator
@@ -46,7 +46,7 @@ module.exports = {
 
 ## Options
 
-Pass supported options to the plugin to modify its default behaviour.
+Pass supported options to the plugin to modify the default behaviour.
 
 ```js
 // gatsby-config.js

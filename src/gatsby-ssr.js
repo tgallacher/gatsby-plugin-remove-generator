@@ -14,13 +14,13 @@ exports.onPreRenderHTML = (
   const keepTag = removeVersionOnly || content != undefined;
   const headComponents = getHeadComponents()
     .map(c =>
-      isGeneratorTag(c.type, c.props.name)
+      isGeneratorTag(c.type, c.props ? c.props.name : '')
         ? Object.assign({}, c, {
             props: Object.assign({}, c.props, { content: content || 'Gatsby' }),
           })
         : c,
     )
-    .filter(({ type, props: { name, content } }) =>
+    .filter(({ type, props: { name, content } = {} }) =>
       keepTag ? true : !isGeneratorTag(type, name),
     );
 

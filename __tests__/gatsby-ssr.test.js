@@ -44,6 +44,7 @@ it('removes the generator <meta> tag', () => {
   let result;
   // mock component objects
   const initialHeadComponents = [
+    { type: 'meta' }, // no props
     { type: 'link', props: { href: '/#' } },
     {
       type: 'meta',
@@ -73,6 +74,7 @@ it('removes the version string from the generator <meta> tag', () => {
   };
   // mock component objects
   const initialHeadComponents = [
+    { type: 'meta' }, // no props
     { type: 'link', props: { href: '/#' } },
     {
       type: 'meta',

@@ -8,7 +8,7 @@ Customise or remove the "_generator_" meta tag on your Gatsby site.
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/tgallacher/gatsby-plugin-remove-generator/graphs/commit-activity)
 ![NPM version](https://img.shields.io/npm/v/gatsby-plugin-remove-generator.svg?style=flat)
 ![NPM license](https://img.shields.io/npm/l/gatsby-plugin-remove-generator.svg?style=flat)
-[![Build Status](https://travis-ci.com/tgallacher/gatsby-plugin-remove-generator.svg?branch=master)](https://travis-ci.com/tgallacher/gatsby-plugin-remove-generator)
+![Build Status](https://github.com/tgallacher/gatsby-plugin-remove-generator/workflows/CI-CD/badge.svg)
 
 ## Background
 

@@ -84,6 +84,23 @@ jobs:
     needs: [lint, test]
     if: contains(github.ref, 'master')
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # cache is branch-scoped by default
+      - name: Dependencies cache
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |-
+            ${{ runner.os }}-node_modules-
+
       - name: Semantic release
         run: yarn semantic-release
         env:

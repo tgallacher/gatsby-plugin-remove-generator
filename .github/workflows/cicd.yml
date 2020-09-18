@@ -1,0 +1,90 @@
+name: 'CI-CD'
+
+on: [push]
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    name: Install Deps (Node12)
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # cache is branch-scoped by default
+      - name: Dependencies cache
+        uses: actions/cache@v2
+        id: cache
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |-
+            ${{ runner.os }}-node_modules-
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: yarn --frozen-lockfile --non-interactive
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: install
+    name: Lint (Node12)
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # cache is branch-scoped by default
+      - name: Dependencies cache
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |-
+            ${{ runner.os }}-node_modules-
+
+      - name: Lint
+        run: yarn lint
+
+  test:
+    runs-on: ubuntu-latest
+    needs: install
+    name: Test (Node12)
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      # cache is branch-scoped by default
+      - name: Dependencies cache
+        uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('yarn.lock') }}
+          restore-keys: |-
+            ${{ runner.os }}-node_modules-
+
+      - name: Test
+        run: yarn test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    if: contains(github.ref, 'master')
+    steps:
+      - name: Semantic release
+        run: yarn semantic-release
+        env:
+          NPM_TOKEN: secrets.NPM_TOKEN

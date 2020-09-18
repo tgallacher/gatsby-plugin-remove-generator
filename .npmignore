@@ -1,4 +1,5 @@
 # Exclude the following from our package
+.github/
 node_modules/
 __tests__/
 src/

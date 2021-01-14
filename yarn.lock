@@ -6890,7 +6890,7 @@ sax@^1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-semantic-release@^17.1.2:
+semantic-release@^17.3.2:
   version "17.3.3"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.3.3.tgz#8f3d2909e9570d9053ef195c138d8d15d7fe5815"
   integrity sha512-StUBghTuh98O0XpDWj5aRLmZwY9zV6gGgbXnw5faon3Br1fRk8r2VSaYozfQTx8o5C8Mtem+a0KWEiTTd4Iylw==

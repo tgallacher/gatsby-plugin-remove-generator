@@ -1,8 +1,6 @@
 # gatsby-plugin-remove-generator
 
-Customise or remove the "_generator_" meta tag on your Gatsby site.
-
----
+Customise or remove the generator meta tag on your Gatsby site.
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square&logo=Github)](http://makeapullrequest.com)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=flat-square)](https://github.com/tgallacher/gatsby-plugin-remove-generator/graphs/commit-activity)
@@ -12,13 +10,15 @@ Customise or remove the "_generator_" meta tag on your Gatsby site.
 
 ## Background
 
-When Gatsby builds your site it will auto-inject a `<meta>` tag in the `<head>` of your site indicating the Gatsby version used to build your site. For example:
+When Gatsby creates a build of your site it will auto-inject a `<meta>` tag indicating the Gatsby version used to build your site. For example:
 
 ```html
 <meta name="generator" content="Gatsby 2.13.2" />
 ```
 
 This is too much detail for my personal preference, and also has potential security implications.
+
+This plugin lets you either customize this content string, or remove the `meta` tag completely.
 
 ## Install
 
@@ -28,9 +28,11 @@ To add this plugin to your Gatsby setup, simply install using yarn/npm
 
 ```sh
 yarn add gatsby-plugin-remove-generator
+# or
+npm install gatsby-plugin-remove-generator
 ```
 
-and add to your config file:
+and add the plugin to your config file:
 
 ```js
 // gatsby-config.js
@@ -42,9 +44,9 @@ module.exports = {
 };
 ```
 
-## Options
+And you're done. By default, with the above setup, the `meta` tag will be removed completely from your build. Use the options config to customize the behavior.
 
-You can overwrite some of the plugin's default behaviour by passing supported options:
+## Options
 
 ```js
 // gatsby-config.js
@@ -54,9 +56,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-remove-generator',
       options: {
-        // Only remove the Gatsby version number instead of the whole node
+        // Only remove the Gatsby version number instead of the whole `meta` tag
         removeVersionOnly: true,
-        // Customise the generator string altogether.
+        // Customise the generator content string.
         // Note: This has the highest precedence of the available options.
         content: 'Custom string'
       },

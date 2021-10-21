@@ -19,7 +19,7 @@
     "gatsby-plugin"
   ],
   "peerDependencies": {
-    "gatsby": "2.x.x || 3.x.x"
+    "gatsby": "2.x.x || 3.x.x || 4.x.x"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.0",

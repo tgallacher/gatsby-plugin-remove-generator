@@ -23,7 +23,7 @@
     "gatsby": "2.x.x || 3.x.x || 4.x.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.2.0",
+    "@commitlint/cli": "^16.1.0",
     "@commitlint/config-conventional": "^13.2.0",
     "conventional-changelog-cli": "^2.0.23",
     "eslint": "^7.32.0",

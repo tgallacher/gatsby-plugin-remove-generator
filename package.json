@@ -33,7 +33,7 @@
     "jest": "^27.5.1",
     "lint-staged": "^12.3.4",
     "prettier": "^2.5.1",
-    "semantic-release": "^17.4.4"
+    "semantic-release": "^19.0.2"
   },
   "engines": {
     "node": ">=8.0.0"
